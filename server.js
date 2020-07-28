@@ -2,14 +2,18 @@
 
 const express = require('express');
 
+
+const port = process.env.PORT;
+
 // Constants
-const PORT = 8080;
-const HOST = '0.0.0.0';
+const PORT = process.env.PORT;
+const HOST = process.env.HOST;
+const VERSION = process.env.VERSION;
 
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello RBC !!!!!!!  Latest Yeah ');
+  res.send('Hello RBC !!!!!!!  VERSION ${VERSION} ');
 });
 
 app.listen(PORT, HOST);

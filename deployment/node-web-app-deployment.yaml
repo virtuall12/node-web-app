@@ -18,5 +18,8 @@ spec:
       - name: node-web-app
         image: image-registry.openshift-image-registry.svc:5000/node-web-project/web-node-app:latest
         imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: node-web-app-config
         ports:
         - containerPort: 8080
